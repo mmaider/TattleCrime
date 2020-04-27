@@ -58,7 +58,7 @@ def registration():
             um = UsersModel(db.get_connection())
             um.insert(user_name, password, age)
             return redirect("/login")
-    return render_template('registration.html', title='Дневник питания',
+    return render_template('registration.html', title='Tattle Crime',
                            form=form)
 
 

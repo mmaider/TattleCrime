@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>{{title}}</title>
+    <title>TattleCrime</title>
 </head>
     <style>
         .navbar-custom {
@@ -20,23 +20,23 @@
     </style>
   <body style="background-image: url(/static/img/banner.jpg);">
     <header>
-     <div style="background-color: ">
       <nav class="navbar navbar-expand-sm navbar-custom">
-          <h1><a class="navbar-brand" href="/index">Tattle Crime</a></h1>
-          {% if "username" in session %}
-              <h1><a class="navbar-brand" href="/recepies">Книга рецептов</a></h1>
-              <h1><a class="navbar-brand" href="/info">О дневнике</a></h1>
-              <h1><a class="navbar-brand" href="/logout">{{session['username']}} (Выйти)</a></h1>
-          {% endif %}
+          <h1><a class="navbar-brand" href="/recepies">Tattle Crime</a></h1>
       </nav>
     </header>
     <!-- Begin page content -->
-    <main role="main" class="container">
-        <div class="row">
-            <div class="col-md-3" style="background-color: #440306;">
-
+    <main role="main" class="container" style="margin: 0px; margin-top: 1%; padding: 0px;">
+        {% if "username" in session %}
+        <div class="row" style="position:absolute; width: 100%;">
+            <div class="col-md-2" style="background-color: #440306; margin-bottom: 1%; padding: 2%;">
+                    <h1><a class="navbar-brand" href="/logout">{{session['username']}} (Выйти)</a></h1>
+                    <h1><a class="navbar-brand" href="/recepies">Последние новости</a></h1>
+                    <h1><a class="navbar-brand" href="/index">Мои публикации</a></h1>
+                    <h1><a class="navbar-brand" href="/recepies">Архив</a></h1>
+                    <h1><a class="navbar-brand" href="/info">О нас</a></h1>
             </div>
-            <div class="col-md-9">
+        {% endif %}
+            <div class="col-md-10">
                 {% block content %}{% endblock %}
             </div>
         </div>

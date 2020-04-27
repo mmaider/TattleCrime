@@ -7,37 +7,6 @@
       <change afterPath="$PROJECT_DIR$/../Tattle-Crime/.idea/misc.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Tattle-Crime/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/TCproject.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loginform/add_form.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loginform/addnewsform.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loginform/db.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loginform/fUCK.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loginform/fUCK.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loginform/loginform.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loginform/news.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loginform/recepieform.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loginform/registrationform.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loginform/startform.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loginform/static/img/add_news.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loginform/static/img/banner.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loginform/static/img/title.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loginform/static/img/Безымянный.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loginform/templates/add_news.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loginform/templates/add_news.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loginform/templates/add_recepie.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loginform/templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loginform/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loginform/templates/info.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loginform/templates/info.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loginform/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loginform/templates/login.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loginform/templates/recepies.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loginform/templates/registration.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loginform/templates/registration.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loginform/templates/start.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loginform/templates/start.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loginform/templates/tattle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loginform/templates/Новый текстовый документ.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/Flask-1.1.2.dist-info/INSTALLER" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/Flask-1.1.2.dist-info/LICENSE.rst" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/Flask-1.1.2.dist-info/METADATA" afterDir="false" />
@@ -661,7 +630,16 @@
       <change afterPath="$PROJECT_DIR$/../untitled2/.idea/misc.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../untitled2/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginform/fUCK.py" beforeDir="false" afterPath="$PROJECT_DIR$/loginform/fUCK.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginform/news.db" beforeDir="false" afterPath="$PROJECT_DIR$/loginform/news.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginform/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/loginform/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginform/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/loginform/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginform/templates/info.html" beforeDir="false" afterPath="$PROJECT_DIR$/loginform/templates/info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginform/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/loginform/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginform/templates/recepies.html" beforeDir="false" afterPath="$PROJECT_DIR$/loginform/templates/recepies.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginform/templates/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/loginform/templates/registration.html" afterDir="false" />
     </list>
+    <list id="c2ed8d85-496b-48e8-8e40-ca88efdeb667" name="Подправила баги: - Нормальный logout - При входе и регистрации учитывается пароль Произошёл мем на стартовой страничке, но я иду обедать, так что он подождёт :)" comment="Подправила баги: - Нормальный logout - При входе и регистрации учитывается пароль Произошёл мем на стартовой страничке, но я иду обедать, так что он подождёт :)" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -670,13 +648,83 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/loginform/fUCK.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+            <state relative-caret-position="204">
+              <caret line="37" column="33" lean-forward="true" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
               <folding>
                 <element signature="e#24#83#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/loginform/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="27" column="91" lean-forward="true" selection-start-line="27" selection-start-column="91" selection-end-line="27" selection-end-column="91" />
+              <folding>
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/loginform/templates/info.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/loginform/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="111">
+              <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/loginform/templates/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-100">
+              <caret line="8" column="41" lean-forward="true" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/loginform/templates/registration.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="41" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/loginform/templates/recepies.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#table#0;n#div#1;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -687,6 +735,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>ma</find>
+      <find>mar</find>
+      <find>margin-r</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -696,12 +746,15 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/loginform/templates/tattle.css" />
-        <option value="$PROJECT_DIR$/loginform/templates/login.html" />
-        <option value="$PROJECT_DIR$/loginform/templates/base.html" />
         <option value="$PROJECT_DIR$/loginform/db.py" />
         <option value="$PROJECT_DIR$/loginform/registrationform.py" />
-        <option value="$PROJECT_DIR$/loginform/templates/registration.html" />
         <option value="$PROJECT_DIR$/loginform/fUCK.py" />
+        <option value="$PROJECT_DIR$/loginform/templates/login.html" />
+        <option value="$PROJECT_DIR$/loginform/templates/registration.html" />
+        <option value="$PROJECT_DIR$/loginform/templates/index.html" />
+        <option value="$PROJECT_DIR$/loginform/templates/info.html" />
+        <option value="$PROJECT_DIR$/loginform/templates/recepies.html" />
+        <option value="$PROJECT_DIR$/loginform/templates/base.html" />
       </list>
     </option>
   </component>
@@ -716,7 +769,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -729,13 +781,21 @@
               <item name="TattleCrime" type="462c0819:PsiDirectoryNode" />
               <item name="loginform" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="TattleCrime" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TattleCrime" type="462c0819:PsiDirectoryNode" />
+              <item name="loginform" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="TODO_SCOPE" value="All Places" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../dnevnik-master" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -822,30 +882,87 @@
       <option name="project" value="LOCAL" />
       <updated>1587986198209</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Подправила баги: &#10;- Нормальный logout &#10;- При входе и регистрации учитывается пароль&#10;- Подкорректировала бд&#10;Поменяла css, поменяла дизайн стартовых страниц">
+      <created>1587986547354</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1587986547354</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Подправила баги: &#10;- Нормальный logout &#10;- При входе и регистрации учитывается пароль&#10;Произошёл мем на стартовой страничке, но я иду обедать, так что он подождёт :)">
+      <created>1587988851911</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1587988851913</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Подправила баги: - Нормальный logout - При входе и регистрации учитывается пароль Произошёл мем на стартовой страничке, но я иду обедать, так что он подождёт :)">
+      <created>1587990162403</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1587990162403</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Начала делать стартовую страницу (пока криво)">
+      <created>1587990235961</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1587990235961</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
+  </component>
+  <component name="TodoView" selected-index="4">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1279762" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32405892" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32405892" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3289689" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.3289689" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1279762" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32405892" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3289689" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.3289689" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -876,7 +993,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Обновила болванку из дневника питания" />
     <MESSAGE value="Подправила баги: &#10;- Нормальный logout &#10;- При входе и регистрации учитывается пароль&#10;- Подкорректировала бд&#10;Поменяла css, поменяла дизайн стартовых страниц" />
-    <option name="LAST_COMMIT_MESSAGE" value="Подправила баги: &#10;- Нормальный logout &#10;- При входе и регистрации учитывается пароль&#10;- Подкорректировала бд&#10;Поменяла css, поменяла дизайн стартовых страниц" />
+    <MESSAGE value="Подправила баги: &#10;- Нормальный logout &#10;- При входе и регистрации учитывается пароль&#10;Произошёл мем на стартовой страничке, но я иду обедать, так что он подождёт :)" />
+    <MESSAGE value="Подправила баги: - Нормальный logout - При входе и регистрации учитывается пароль Произошёл мем на стартовой страничке, но я иду обедать, так что он подождёт :)" />
+    <MESSAGE value="Начала делать стартовую страницу (пока криво)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Начала делать стартовую страницу (пока криво)" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/loginform/templates/tattle.css">
@@ -893,27 +1013,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/loginform/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/loginform/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="11" lean-forward="true" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/loginform/loginform.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -921,13 +1020,6 @@
           <folding>
             <element signature="e#24#55#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/loginform/templates/registration.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-332">
-          <caret line="3" column="53" selection-start-line="3" selection-start-column="53" selection-end-line="3" selection-end-column="53" />
         </state>
       </provider>
     </entry>
@@ -945,12 +1037,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/loginform/fUCK.py">
+    <entry file="file://$PROJECT_DIR$/loginform/templates/login.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+          <caret line="11" column="17" lean-forward="true" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loginform/fUCK.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="37" column="33" lean-forward="true" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
           <folding>
             <element signature="e#24#83#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loginform/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loginform/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-100">
+          <caret line="8" column="41" lean-forward="true" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loginform/templates/recepies.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loginform/templates/registration.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="41" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loginform/templates/info.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loginform/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="27" column="91" lean-forward="true" selection-start-line="27" selection-start-column="91" selection-end-line="27" selection-end-column="91" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
