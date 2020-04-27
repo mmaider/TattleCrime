@@ -1,0 +1,56 @@
+﻿{% extends "base.html" %}
+
+{% block content %}
+<div class="alert alert-light" role="alert" style="margin-top:3%">
+<a href="/add_news">Добавьте запись!</a>
+</div>
+{% for item in news %}
+    <div class="alert alert-light" role="alert" style="padding:1%; margin-top:3%">
+	<h2>{{item[1]}}</h2>
+	<table class="table table-bordered">
+  	<thead>
+    		<tr class="table-active">
+      		<th scope="col"></th>
+      		<th scope="col">Завтрак</th>
+      		<th scope="col">Обед</th>
+      		<th scope="col">Ужин</th>
+   	 </tr>
+  	 </thead>
+  	 <tbody>
+    	 <tr class="table-light">
+      	 <th scope="row">Рацион</th>
+      		<td>{{item[2]}}</td>
+      		<td>{{item[5]}}</td>
+      		<td>{{item[4]}}</td>
+    	 </tr>
+    	 <tr class="table-active">
+      	 <th scope="row">Калории</th>
+      		<td>{{item[6]}} кал.</td>
+      		<td>{{item[8]}} кал.</td>
+      		<td>{{item[7]}} кал.</td>
+    	 </tr>
+  	 </tbody>
+	 </table>
+	 <h4>Всего калорий потреблено: {{item[6]+item[7]+item[8]}} из {{session['rsk']}}</h4>
+	{% if item[6]+item[7]+item[8] < session['rsk']-200 %}
+        	<div>Не сдерживайте себя, съешьте ещё что-нибудь :)</div>
+ 	{% elif item[6]+item[7]+item[8] > session['rsk']+200 %}
+       		<div>Вы вышли за пределы нормы. Вам стоит по возможности ограничить себя в еде до завтра</div>
+	{% else %}
+		<div>Вы достигли нормы! Ура!</div>
+ 	{% endif %}
+
+	 <h4>Самочувствие: {{item[9]}}</h4>
+
+	{% if (item[9] == 'плохо :(' or item[9] == 'чувствую слабость')  and item[6]+item[7]+item[8] < session['rsk']-200 %}
+        	<div>Причиной может быть недоедание... Но вам надо обратиться к специалисту</div>
+ 	{% elif (item[9] == 'плохо :(' or item[9] == 'чувствую слабость')  and item[6]+item[7]+item[8] > session['rsk']+200 %}
+       		<div>Причиной может быть переедание... Но вам надо обратиться к специалисту</div>
+	{% elif item[9] == 'плохо :(' or item[9] == 'чувствую слабость' %}
+		<div>Судя по употреблённым калориям, это не из-за проблем с употреблением пищи... Обратитесь к специалисту</div>
+ 	{% endif %}
+	 <h4>Вес на данный момент: {{item[10]}}</h4>
+         <a href="/delete_news/{{item[0]}}">Удалить запись</a>
+    </div>
+{% endfor %}
+{% endblock %}

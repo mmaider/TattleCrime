@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="alert alert-light" role="alert" style="margin-top:3%">
+	<h1>Как пользоваться "Дневником?"</h1>
+	<p>Блаблабла</p>
+</div>
+{% endfor %}
+{% endblock %}

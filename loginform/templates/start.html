@@ -1,0 +1,13 @@
+﻿{% extends "base.html" %}
+
+{% block content %}
+<h1>Добро пожаловать!</h1>
+<form action="" method="post" novalidate>
+<p>
+{{ form.hidden_tag() }}
+{{ form.radiobuttons }}
+</p>
+<p>{{ form.submit() }}</p>
+</form>
+
+{% endblock %}

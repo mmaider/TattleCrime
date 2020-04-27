@@ -1,0 +1,905 @@
+# -*- coding: utf-8 -*-
+from flask import Flask, redirect, session, render_template
+from flask_wtf import FlaskForm
+from werkzeug.security import generate_password_hash
+from flask_wtf import FlaskForm
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField, SubmitField, TextAreaField, DateField, IntegerField, SelectField
+from wtforms.validators import DataRequired
+import datetime
+
+
+class AddNewsForm(FlaskForm):
+    date = str(datetime.datetime.now().strftime("%d-%m-%Y %H:%M"))
+    title = DateField('Дата ' + date)
+    breakfast = TextAreaField('Ваш завтрак', validators=[DataRequired()])
+    lunch = TextAreaField('Ваш обед', validators=[DataRequired()])
+    dinner = TextAreaField('Ваш ужин', validators=[DataRequired()])
+    BKal = IntegerField('Калории за завтрак', validators=[DataRequired()])
+    LKal = IntegerField('Калории за обед', validators=[DataRequired()])
+    DKal = IntegerField('Калории за ужин', validators=[DataRequired()])
+    health = SelectField('Оцените ваше самочувствие', choices=[
+        ("плохо :(", "плохо :("),
+        ("чувствую слабость", "чувствую слабость"),
+        ("бодрость", "бодрость"),
+        ("Полон/полна сил!", "Полон/полна сил!")])
+    weight = IntegerField('Вес', validators=[DataRequired()])
+    submit = SubmitField('Сохранить')
+
+
+app = Flask(__name__)
+app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
+
+
+@app.route('/', methods=['GET', 'POST'])
+@app.route('/add_news', methods=['GET', 'POST'])
+def add_news():
+    form = AddNewsForm()
+    return render_template('add_news.html', title='Дневник питания',
+                           form=form, username=session['username'])
+
+
+if __name__ == '__main__':
+    app.run(port=8080, host='127.0.0.1')
+    # -*- coding: utf-8 -*-
+    import sqlite3
+    from flask import Flask, redirect, session, render_template
+    from flask_wtf import FlaskForm
+
+
+    class DB:
+        def __init__(self):
+            conn = sqlite3.connect('news.db', check_same_thread=False)
+            self.conn = conn
+
+        def get_connection(self):
+            return self.conn
+
+        def __del__(self):
+            self.conn.close()
+
+
+    class NewsModel:
+        def __init__(self, connection):
+            self.connection = connection
+
+        def init_table(self):
+            cursor = self.connection.cursor()
+            cursor.execute('''CREATE TABLE IF NOT EXISTS news 
+                                (id INTEGER PRIMARY KEY AUTOINCREMENT, 
+                                 title VARCHAR(100),
+                                 breakfast VARCHAR(1000),
+                                 user_id INTEGER,
+                                 dinner VARCHAR(1000),
+                                 lunch VARCHAR(1000),
+                                 BKal INTEGER,
+                                 DKal INTEGER,
+                                 LKal INTEGER,
+                                 health VARCHAR(1000),
+                                 weight INTEGER
+                                 )''')
+            cursor.close()
+            self.connection.commit()
+
+        def insert(self, title, breakfast, user_id, dinner, lunch, BKal, DKal, LKal, health, weight):
+            cursor = self.connection.cursor()
+            cursor.execute('''INSERT INTO news 
+                              (title, breakfast, user_id, dinner, lunch, BKal, DKal, LKal, health, weight) 
+                              VALUES (?,?,?,?,?,?,?,?,?,?)''',
+                           (title, breakfast, str(user_id), dinner, lunch, BKal, DKal, LKal, health, weight))
+            cursor.close()
+            self.connection.commit()
+
+        def get(self, news_id):
+            cursor = self.connection.cursor()
+            cursor.execute("SELECT * FROM news WHERE id = ?", (str(news_id)))
+            row = cursor.fetchone()
+            return row
+
+        def get_all(self, user_id=None):
+            cursor = self.connection.cursor()
+            if user_id:
+                cursor.execute("SELECT * FROM news WHERE user_id = ?",
+                               (str(user_id),))
+            else:
+                cursor.execute("SELECT * FROM news")
+            rows = cursor.fetchall()
+            return rows
+
+        def delete(self, news_id):
+            cursor = self.connection.cursor()
+            cursor.execute('''DELETE FROM news WHERE id = ?''', (str(news_id),))
+            cursor.close()
+            self.connection.commit()
+
+
+    class RecepieModel:
+        def __init__(self, connection):
+            self.connection = connection
+
+        def init_table(self):
+            cursor = self.connection.cursor()
+            cursor.execute('''CREATE TABLE IF NOT EXISTS recepies 
+                                (recepie_name VARCHAR(100),
+                                 recepie_text TEXT,
+                                 recepie_kals REAL,
+                                 username VARCHAR(100),
+                                 id	INTEGER PRIMARY KEY AUTOINCREMENT
+                                 )''')
+            cursor.close()
+            self.connection.commit()
+
+        def insert(self, recepie_name, recepie_text, recepie_kals, username):
+            cursor = self.connection.cursor()
+            cursor.execute('''INSERT INTO recepies 
+                              (recepie_name, recepie_text, recepie_kals, username) 
+                              VALUES (?,?,?,?)''',
+                           (recepie_name, recepie_text, recepie_kals, username))
+            cursor.close()
+            self.connection.commit()
+
+        def get_all(self):
+            cursor = self.connection.cursor()
+            cursor.execute("SELECT * FROM recepies")
+            rows = cursor.fetchall()
+            print(rows)
+            return rows
+
+        def delete(self, username):
+            cursor = self.connection.cursor()
+            cursor.execute('''DELETE FROM news WHERE username = ?''', (session[username],))
+            cursor.close()
+            self.connection.commit()
+
+
+    class UsersModel:
+        def __init__(self, connection):
+            self.connection = connection
+
+        def init_table(self):
+            cursor = self.connection.cursor()
+            cursor.execute('''CREATE TABLE IF NOT EXISTS users 
+                                (id INTEGER PRIMARY KEY AUTOINCREMENT, 
+                                 user_name VARCHAR(50),
+                                 password_hash VARCHAR(128),
+                                 rsk INTEGER
+                                 )''')
+            cursor.close()
+            self.connection.commit()
+
+        def insert(self, user_name, password_hash, rsk):
+            cursor = self.connection.cursor()
+            cursor.execute('''INSERT INTO users 
+                              (user_name, password_hash, rsk) 
+                              VALUES (?,?,?)''', (user_name, password_hash, rsk))
+            cursor.close()
+            self.connection.commit()
+
+        def get(self, user_id):
+            cursor = self.connection.cursor()
+            cursor.execute("SELECT * FROM users WHERE id = ?", (str(user_id)))
+            row = cursor.fetchone()
+            return row
+
+        def get_all(self):
+            cursor = self.connection.cursor()
+            cursor.execute("SELECT * FROM users")
+            rows = cursor.fetchall()
+            return rows
+
+        def exists(self, user_name):
+            cursor = self.connection.cursor()
+            cursor.execute("SELECT * FROM users WHERE user_name = ?",
+                           (user_name,))
+            row = cursor.fetchone()
+            return (True, row[0], row[3]) if row else (False,)
+# -*- coding: utf-8 -*-
+from flask import Flask, redirect, session, render_template
+from flask_wtf import FlaskForm
+from db import DB, UsersModel, NewsModel, RecepieModel
+from loginform import LoginForm
+from recepieform import AddRecepieForm
+from addnewsform import AddNewsForm
+from registrationform import RegistrationForm
+import random
+import datetime
+
+app = Flask(__name__)
+app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
+
+db = DB()
+NewsModel(db.get_connection()).init_table()
+UsersModel(db.get_connection()).init_table()
+
+
+@app.route('/', methods=['GET', 'POST'])
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    form = LoginForm()
+    if form.validate_on_submit():
+        user_name = form.username.data
+        password = form.password.data
+        user_model = UsersModel(db.get_connection())
+        exists = user_model.exists(user_name)
+        print(exists)
+        if (exists[0]):
+            session['username'] = user_name
+            session['user_id'] = exists[1]
+            session['rsk'] = int(exists[2])
+        return redirect("/index")
+    return render_template('login.html', title='Дневник питания',
+                           form=form)
+
+
+@app.route('/registration', methods=['GET', 'POST'])
+def registration():
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        user_name = form.username.data
+        password = form.password.data
+        weight = form.weight.data
+        height = form.height.data
+        age = form.age.data
+        rsk = 447.6 + (9.2 * weight) + (3.1 * height) - (4.3 * age)
+        user_model = UsersModel(db.get_connection())
+        exists = user_model.exists(user_name)
+        if not (exists[0]):
+            session['username'] = user_name
+            session['user_id'] = int(str(random.randint(0, 100)) + str(random.randint(0, 100)))
+            session['rsk'] = rsk
+            um = UsersModel(db.get_connection())
+            um.insert(user_name, password, rsk)
+            return redirect("/login")
+    return render_template('registration.html', title='Дневник питания',
+                           form=form)
+
+
+@app.route('/logout')
+def logout():
+    session.pop('username', 0)
+    session.pop('user_id', 0)
+    return redirect('/login')
+
+
+@app.route('/')
+@app.route('/index')
+def index():
+    if 'username' not in session:
+        return redirect('/login')
+    news = NewsModel(db.get_connection()).get_all(session['user_id'])
+    return render_template('index.html', username=session['username'],
+                           news=news)
+
+
+@app.route('/add_news', methods=['GET', 'POST'])
+def add_news():
+    if 'username' not in session:
+        return redirect('/login')
+    form = AddNewsForm()
+    if form.validate_on_submit():
+        date = str(datetime.datetime.now().strftime("%d-%m-%Y %H:%M"))
+        breakfast = form.breakfast.data
+        lunch = form.lunch.data
+        dinner = form.dinner.data
+        BKal = form.BKal.data
+        LKal = form.LKal.data
+        DKal = form.DKal.data
+        kallories = BKal + LKal + DKal
+        health = form.health.data
+        weight = form.weight.data
+        nm = NewsModel(db.get_connection())
+        nm.insert(str(datetime.datetime.now().strftime("%d-%m-%Y %H:%M")), breakfast,
+                  session['user_id'], dinner, lunch,
+                  BKal, DKal, LKal, health, weight)
+        return redirect("/index")
+    return render_template('add_news.html', title='Дневник питания',
+                           form=form, username=session['username'])
+
+
+@app.route('/delete_news/<int:news_id>', methods=['GET'])
+def delete_news(news_id):
+    if 'username' not in session:
+        return redirect('/login')
+    nm = NewsModel(db.get_connection())
+    nm.delete(news_id)
+    return redirect("/index")
+
+
+@app.route('/info', methods=['GET', 'POST'])
+def info():
+    if 'username' not in session:
+        return redirect('/login')
+    return render_template('info.html', title='Дневник питания')
+
+
+@app.route('/recepies', methods=['GET', 'POST'])
+def recepies():
+    if 'username' not in session:
+        return redirect('/login')
+    recepies = RecepieModel(db.get_connection()).get_all()
+    return render_template('recepies.html', username=session['username'],
+                           recepies=recepies)
+
+
+@app.route('/add_recepie', methods=['GET', 'POST'])
+def add_recepie():
+    if 'username' not in session:
+        return redirect('/login')
+    form = AddRecepieForm()
+    if form.validate_on_submit():
+        recepie_name = form.recepie_name.data
+        recepie_text = form.recepie_text.data
+        recepie_kals = form.recepie_kals.data
+        rm = RecepieModel(db.get_connection())
+        rm.insert(recepie_name, recepie_text, recepie_kals,
+                  session['username'])
+        return redirect("/recepies")
+    return render_template('add_recepie.html', title='Дневник питания',
+                           form=form, username=session['username'])
+
+
+if __name__ == '__main__':
+    app.run(port=8080, host='127.0.0.1')
+# -*- coding: utf-8 -*-
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField, BooleanField, SubmitField
+from wtforms.validators import DataRequired
+
+
+class LoginForm(FlaskForm):
+    username = StringField('Никнейм', validators=[DataRequired()])
+    password = PasswordField('Пароль', validators=[DataRequired()])
+    remember_me = BooleanField('Запомнить меня?')
+    submit = SubmitField('Войти!')
+    # -*- coding: utf-8 -*-
+    from flask_wtf import FlaskForm
+    from wtforms import StringField, PasswordField, TextAreaField, SubmitField, FloatField, IntegerField
+    from wtforms.validators import DataRequired
+
+    class AddRecepieForm(FlaskForm):
+        recepie_name = StringField('Название блюда', validators=[DataRequired()])
+        recepie_text = TextAreaField('Описание рецепта', validators=[DataRequired()])
+        recepie_kals = FloatField('Калории в 100 г.', validators=[DataRequired()])
+        submit = SubmitField('Отправить')
+        # -*- coding: utf-8 -*-
+        from flask_wtf import FlaskForm
+        from wtforms import StringField, PasswordField, BooleanField, SubmitField, FloatField, IntegerField
+        from wtforms.validators import DataRequired
+
+        class RegistrationForm(FlaskForm):
+            username = StringField('Никнейм', validators=[DataRequired()])
+            password = PasswordField('Пароль', validators=[DataRequired()])
+            weight = FloatField('Вес', validators=[DataRequired()])
+            height = FloatField('Рост', validators=[DataRequired()])
+            age = IntegerField('Возраст', validators=[DataRequired()])
+            submit = SubmitField('Отправить')
+            # -*- coding: utf-8 -*-
+            from flask_wtf import FlaskForm
+            from wtforms import StringField, PasswordField, BooleanField, SubmitField, RadioField
+            from wtforms.validators import DataRequired
+
+            class StartForm(FlaskForm):
+                radiobuttons = RadioField('Label', choices=[('value', 'description'), ('value_two', 'whatever')])
+                submit = SubmitField('Отправить!')
+                { % extends
+                "base.html" %}
+
+                { % block
+                content %}
+                < div
+
+                class ="alert alert-light" role="alert" style="padding: 1%; margin:5%" >
+
+                < p > < / p >
+                < h1 > Добавьте
+                запись! < / h1 > < br >
+                < form
+                action = ""
+                method = "post"
+                novalidate >
+                {{form.hidden_tag()}}
+                < h4 > {{form.title.label}} < h4 > < br >
+                { %
+                for error in form.title.errors %}
+                < div
+
+                class ="alert alert-danger" role="alert" >
+
+                {{error}}
+
+            < / div >
+
+        { % endfor %}
+        < div
+
+        class ="row" >
+
+        < div
+
+        class ="col-md-6" >
+
+        < p >
+        {{form.breakfast.label}} < br >
+        {{form.breakfast}} < br >
+        { %
+        for error in form.breakfast.errors %}
+        < div
+
+        class ="alert alert-danger" role="alert" >
+
+        {{error}}
+
+    < / div >
+
+
+{ % endfor %}
+< / p >
+< / div >
+< div
+
+
+class ="col-md-6" >
+
+< p >
+{{form.BKal.label}} < br >
+{{form.BKal}} < br >
+{ %
+for error in form.BKal.errors %}
+< div
+
+
+class ="alert alert-danger" role="alert" >
+
+
+{{error}}
+< / div >
+{ % endfor %}
+< / p >
+< / div >
+< / div >
+
+< div
+
+
+class ="row" >
+
+< div
+
+
+class ="col-md-6" >
+
+< p >
+{{form.lunch.label}} < br >
+{{form.lunch}} < br >
+{ %
+for error in form.lunch.errors %}
+< div
+
+
+class ="alert alert-danger" role="alert" >
+
+
+{{error}}
+< / div >
+{ % endfor %}
+< / p >
+< / div >
+< div
+
+
+class ="col-md-6" >
+
+< p >
+{{form.LKal.label}} < br >
+{{form.LKal}} < br >
+{ %
+for error in form.LKal.errors %}
+< div
+
+
+class ="alert alert-danger" role="alert" >
+
+
+{{error}}
+< / div >
+{ % endfor %}
+< / p >
+< / div >
+< / div >
+
+< div
+
+
+class ="row" >
+
+< div
+
+
+class ="col-md-6" >
+
+< p >
+{{form.dinner.label}} < br >
+{{form.dinner}} < br >
+{ %
+for error in form.dinner.errors %}
+< div
+
+
+class ="alert alert-danger" role="alert" >
+
+
+{{error}}
+< / div >
+{ % endfor %}
+< / p >
+< / div >
+< div
+
+
+class ="col-md-6" >
+
+< p >
+{{form.DKal.label}} < br >
+{{form.DKal}} < br >
+{ %
+for error in form.DKal.errors %}
+< div
+
+
+class ="alert alert-danger" role="alert" >
+
+
+{{error}}
+< / div >
+{ % endfor %}
+< / p >
+< / div >
+< / div >
+
+< div
+
+
+class ="row" >
+
+< div
+
+
+class ="col-md-6" >
+
+< p >
+{{form.health.label}} < br >
+{{form.health}} < br >
+{ %
+for error in form.health.errors %}
+< div
+
+
+class ="alert alert-danger" role="alert" >
+
+
+{{error}}
+< / div >
+{ % endfor %}
+< / p >
+< / div >
+< div
+
+
+class ="col-md-6" >
+
+< p >
+{{form.weight.label}} < br >
+{{form.weight}} < br >
+{ %
+for error in form.weight.errors %}
+< div
+
+
+class ="alert alert-danger" role="alert" >
+
+
+{{error}}
+< / div >
+{ % endfor %}
+< / p >
+< / div >
+< / div >
+< p > {{form.submit()}} < / p >
+< / form >
+< / div >
+{ % endblock %}
+{ % extends
+"base.html" %}
+
+{ % block
+content %}
+< div
+
+
+class ="alert alert-light" role="alert" style="padding: 1%; margin:5%" >
+
+< p > < / p >
+< h1 > Добавьте
+рецепт < / h1 > < br >
+< form
+action = ""
+method = "post"
+novalidate >
+{{form.hidden_tag()}}
+< h4 > {{form.recepie_name.label}} < h4 >
+{{form.recepie_name}} < br >
+{ %
+for error in form.recepie_name.errors %}
+< div
+
+
+class ="alert alert-danger" role="alert" >
+
+
+{{error}}
+< / div >
+{ % endfor %}
+< div
+
+
+class ="row" >
+
+< div
+
+
+class ="col-md-6" >
+
+< p >
+{{form.recepie_text.label}} < br >
+{{form.recepie_text}} < br >
+{ %
+for error in form.recepie_text.errors %}
+< div
+
+
+class ="alert alert-danger" role="alert" >
+
+
+{{error}}
+< / div >
+{ % endfor %}
+< / p >
+< / div >
+< div
+
+
+class ="col-md-6" >
+
+< p >
+{{form.recepie_kals.label}} < br >
+{{form.recepie_kals}} < br >
+{ %
+for error in form.recepie_kals.errors %}
+< div
+
+
+class ="alert alert-danger" role="alert" >
+
+
+{{error}}
+< / div >
+{ % endfor %}
+< / p >
+< / div >
+< / div >
+< p > {{form.submit()}} < / p >
+< / form >
+< / div >
+{ % endblock %}
+< !doctype
+html >
+< html
+lang = "ru" >
+< head >
+< meta
+charset = "utf-8" >
+< meta
+name = "viewport"
+content = "width=device-width, initial-scale=1, shrink-to-fit=no" >
+< link
+rel = "stylesheet"
+href = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+integrity = "sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+crossorigin = "anonymous" >
+< title > {{title}} < / title >
+< / head >
+< body
+style = "background-image: url(/static/img/banner.jpg);" >
+< header >
+< div
+style = "background-color: " >
+< nav
+
+
+class ="navbar navbar-light bg-light" >
+
+< h1 > < a
+
+
+class ="navbar-brand" href="/index" > Дневник питания < / a > < / h1 >
+
+
+{ % if "username" in session %}
+< h1 > < a
+
+
+class ="navbar-brand" href="/recepies" > Книга рецептов < / a > < / h1 >
+
+< h1 > < a
+
+
+class ="navbar-brand" href="/info" > О дневнике < / a > < / h1 >
+
+< h1 > < a
+
+
+class ="navbar-brand" href="/logout" > {{session['username']}} (Выйти) < / a > < / h1 >
+
+
+{ % endif %}
+< / nav >
+< / header >
+< !-- Begin
+page
+content -->
+< main
+role = "main"
+
+
+class ="container" >
+
+
+{ % block
+content %}{ % endblock %}
+< / main >
+< / body >
+< / html >
+{ % extends
+"base.html" %}
+
+{ % block
+content %}
+< div
+
+
+class ="alert alert-light" role="alert" style="margin-top:3%" >
+
+< a
+href = "/add_news" > Добавьте
+запись! < / a >
+< / div >
+{ %
+for item in news %}
+< div
+
+
+class ="alert alert-light" role="alert" style="padding:1%; margin-top:3%" >
+
+< h2 > {{item[1]}} < / h2 >
+< table
+
+
+class ="table table-bordered" >
+
+< thead >
+< tr
+
+
+class ="table-active" >
+
+< th
+scope = "col" > < / th >
+< th
+scope = "col" > Завтрак < / th >
+< th
+scope = "col" > Обед < / th >
+< th
+scope = "col" > Ужин < / th >
+< / tr >
+< / thead >
+< tbody >
+< tr
+
+
+class ="table-light" >
+
+< th
+scope = "row" > Рацион < / th >
+< td > {{item[2]}} < / td >
+< td > {{item[5]}} < / td >
+< td > {{item[4]}} < / td >
+< / tr >
+< tr
+
+
+class ="table-active" >
+
+< th
+scope = "row" > Калории < / th >
+< td > {{item[6]}}
+кал. < / td >
+< td > {{item[8]}}
+кал. < / td >
+< td > {{item[7]}}
+кал. < / td >
+< / tr >
+< / tbody >
+< / table >
+href = "/delete_news/{{item[0]}}" > Удалить
+запись < / a >
+           < / div >
+               { % endfor %}
+{ % endblock %}
+{ % extends
+"base.html" %}
+
+{ % block
+content %}
+< div
+
+
+class ="alert alert-light" role="alert" style="margin-top:3%" >
+
+"Книга рецептов" < / p >
+< p > < img
+src = "/static/img/add_news.jpg"
+width = "50%"
+alt = "Форма добавления записи" > < / p >
+< / div >
+{ % endblock %}
+{ % extends
+"base.html" %}
+
+{ % block
+content %}
+< div
+style = "background-color: whitesmoke; margin: 5%; padding: 1%;" >
+< h1 > Авторизация < / h1 >
+< form
+action = ""
+method = "post"
+novalidate >
+{{form.hidden_tag()}}
+< p >
+{{form.username.label}} < br >
+{{form.username}} < br >
+{ %
+for error in form.username.errors %}
+< div
+
+
+class ="alert alert-danger" role="alert" >
+
+
+{{error}}
+< / div >
+{ % endfor %}
+< / p >
+< p >
+{{form.password.label}} < br >
+{{form.password}} < br >
+{ %
+for error in form.password.errors %}
+< div
+
+
+class ="alert alert-danger" role="alert" >
+
+
+{{error}}
+< / div >
+{ % endfor %}
+< / p >
+< p > {{form.remember_me()}}
+{{form.remember_me.label}} < / p >
+< a
+href = "{{ url_for('registration') }}" > Регистрация < / a >
+< p > {{form.submit()}} < / p >
+< / form >
+< / div >
+{ % endblock %}

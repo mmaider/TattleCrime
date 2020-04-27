@@ -1,0 +1,117 @@
+﻿{% extends "base.html" %}
+ 
+{% block content %}
+    <div class="alert alert-light" role="alert" style="padding: 1%; margin:5%">
+    <p></p>
+    <h1>Добавьте запись!</h1><br>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+            <h4>{{ form.title.label }}<h4><br>
+            {% for error in form.title.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+	<div class="row">
+    	<div class="col-md-6">
+        <p>
+            {{ form.breakfast.label }}<br>
+            {{ form.breakfast }}<br>
+            {% for error in form.breakfast.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        </p>
+    	</div>
+    	<div class="col-md-6">
+        <p>
+            {{ form.BKal.label }}<br>
+            {{ form.BKal }}<br>
+            {% for error in form.BKal.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        </p>
+    	</div>
+	</div>
+
+	<div class="row">
+    	<div class="col-md-6">
+        <p>
+            {{ form.lunch.label }}<br>
+            {{ form.lunch }}<br>
+            {% for error in form.lunch.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        </p>
+    	</div>
+    	<div class="col-md-6">
+        <p>
+            {{ form.LKal.label }}<br>
+            {{ form.LKal }}<br>
+            {% for error in form.LKal.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        </p>
+    	</div>
+	</div>
+
+	<div class="row">
+    	<div class="col-md-6">
+	<p>
+            {{ form.dinner.label }}<br>
+            {{ form.dinner }}<br>
+            {% for error in form.dinner.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        </p>
+    	</div>
+    	<div class="col-md-6">
+	<p>
+            {{ form.DKal.label }}<br>
+            {{ form.DKal }}<br>
+            {% for error in form.DKal.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        </p>
+    	</div>
+    	</div>
+
+	<div class="row">
+	<div class="col-md-6">
+	<p>
+            {{ form.health.label }}<br>
+            {{ form.health }}<br>
+            {% for error in form.health.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        </p>
+    	</div>
+	<div class="col-md-6">
+	<p>
+            {{ form.weight.label }}<br>
+            {{ form.weight }}<br>
+            {% for error in form.weight.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        </p>
+    	</div>
+	</div>
+        <p>{{ form.submit() }}</p>
+    </form>
+    </div>
+{% endblock %}
