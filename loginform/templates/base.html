@@ -17,31 +17,29 @@
             font-size: 100% !important;
             font-family: "Times New Roman", Times, serif !important;
         }
-        /* change the link color */
-        .navbar-custom .navbar-nav .nav-link {
-            color: #D56066 !important;
-        }
-        /* change the color of active or hovered links */
-        .navbar-custom .nav-item.active .nav-link,
-        .navbar-custom .nav-item:hover .nav-link {
-            color: #D56066 !important;
-        }
     </style>
   <body style="background-image: url(/static/img/banner.jpg);">
     <header>
      <div style="background-color: ">
       <nav class="navbar navbar-expand-sm navbar-custom">
-        <h1><a class="navbar-brand" href="/index">Tattle Crime</a></h1>
-{% if "username" in session %}
-        <h1><a class="navbar-brand" href="/recepies">Книга рецептов</a></h1>
-	<h1><a class="navbar-brand" href="/info">О дневнике</a></h1>
-    	<h1><a class="navbar-brand" href="/logout">{{session['username']}} (Выйти)</a></h1>
-{% endif %}
+          <h1><a class="navbar-brand" href="/index">Tattle Crime</a></h1>
+          {% if "username" in session %}
+              <h1><a class="navbar-brand" href="/recepies">Книга рецептов</a></h1>
+              <h1><a class="navbar-brand" href="/info">О дневнике</a></h1>
+              <h1><a class="navbar-brand" href="/logout">{{session['username']}} (Выйти)</a></h1>
+          {% endif %}
       </nav>
     </header>
     <!-- Begin page content -->
     <main role="main" class="container">
-        {% block content %}{% endblock %}
+        <div class="row">
+            <div class="col-md-3" style="background-color: #440306;">
+
+            </div>
+            <div class="col-md-9">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
     </main>
   </body>
 </html>
