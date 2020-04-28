@@ -1,7 +1,14 @@
 ﻿{% extends "base.html" %}
- 
 {% block content %}
-    <div class="alert alert-light" role="alert" style="padding: 1%; margin:5%">
+    <style type="text/css">
+        textarea {
+            width: 100%;
+        }
+        input{
+            width: 30%;
+        }
+    </style>
+    <div class="alert alert-light" role="alert" style="padding: 1%; margin:3%">
     <p></p>
     <h1>Добавьте запись</h1><br>
     <form action="" method="post" novalidate>
@@ -14,7 +21,9 @@
                 </div>
             {% endfor %}
         <p>
-        <h4>{{ form.crime_text.label }}</h4>
+        <h4>
+        {{ form.crime_text.label }}
+        </h4>
             {{ form.crime_text }}<br>
             {% for error in form.crime_text.errors %}
                 <div class="alert alert-danger" role="alert">

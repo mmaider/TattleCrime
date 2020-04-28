@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="alert alert-light" role="alert">
+<a href="/add_crime">Хотите добавить запись?</a>
+</div>
+<div class="alert alert-light" role="alert" style="padding:1%; margin-top:3%">
+<table class="table table-bordered" style="position: relative;">
+<thead>
+	<tr class="table-active">
+	<th scope="col">Заголовок</th>
+	<th scope="col">Текст</th>
+	<th scope="col">Время публикации</th>
+	<th scope="col">Фото</th>
+	<th scope="col">Лайки</th>
+	<th scope="col">Автор публикации</th>
+</tr>
+</thead>
+<tbody>
+{% for item in crimes %}
+    	 <tr class="table-light">
+      		<td>{{item[0]}}</td>
+		<td>{{item[1]}}</td>
+		<td>{{item[2]}}</td>
+		<td>{{item[4]}}</td>
+		<td>{{item[3]}} <a href="/like_act/{{item[6]}}">&#9825;</a></td>
+		<td>{{item[5]}}</td>
+    	 </tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+{% endblock %}

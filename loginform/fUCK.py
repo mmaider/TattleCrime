@@ -36,7 +36,7 @@ def login():
             session['username'] = user_name
             session['user_id'] = exists[1]
 
-        return redirect("/index")
+        return redirect("/crimes")
     return render_template('login.html', title='TattleCrime.com',
                            form=form)
 
@@ -127,6 +127,15 @@ def crimes():
         return redirect('/login')
     crimes = CrimeModel(db.get_connection()).get_all()
     return render_template('crimes.html', username=session['username'],
+                           crimes=crimes)
+
+
+@app.route('/archive', methods=['GET', 'POST'])
+def archive():
+    if 'username' not in session:
+        return redirect('/login')
+    crimes = CrimeModel(db.get_connection()).get_all()
+    return render_template('archive.html', username=session['username'],
                            crimes=crimes)
 
 
