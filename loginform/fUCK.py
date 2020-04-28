@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, redirect, session, render_template
 from flask_wtf import FlaskForm
-from db import DB, UsersModel, NewsModel, RecepieModel
+from db import DB, UsersModel, NewsModel, CrimeModel
 from loginform import LoginForm
-from recepieform import AddRecepieForm
+from crimeform import AddCrimeForm
 from addnewsform import AddNewsForm
 from registrationform import RegistrationForm
 import random
@@ -120,29 +120,37 @@ def info():
     return render_template('info.html', title='Дневник питания')
 
 
-@app.route('/recepies', methods=['GET', 'POST'])
-def recepies():
+@app.route('/crimes', methods=['GET', 'POST'])
+def crimes():
     if 'username' not in session:
         return redirect('/login')
-    recepies = RecepieModel(db.get_connection()).get_all()
-    return render_template('recepies.html', username=session['username'],
-                           recepies=recepies)
+    crimes = CrimeModel(db.get_connection()).get_all()
+    return render_template('crimes.html', username=session['username'],
+                           crimes=crimes)
 
 
-@app.route('/add_recepie', methods=['GET', 'POST'])
-def add_recepie():
+@app.route('/like_act/<crime_id>', methods=['GET', 'POST'])
+def like_act(crime_id):
+    rm = CrimeModel(db.get_connection())
+    rm.like(crime_id)
+    return redirect("/crimes")
+
+
+@app.route('/add_crime', methods=['GET', 'POST'])
+def add_crime():
     if 'username' not in session:
         return redirect('/login')
-    form = AddRecepieForm()
+    form = AddCrimeForm()
     if form.validate_on_submit():
-        recepie_name = form.recepie_name.data
-        recepie_text = form.recepie_text.data
-        recepie_kals = form.recepie_kals.data
-        rm = RecepieModel(db.get_connection())
-        rm.insert(recepie_name, recepie_text, recepie_kals,
+        date = str(datetime.datetime.now().strftime("%d-%m-%Y %H:%M"))
+        crime_name = form.crime_name.data
+        crime_text = form.crime_text.data
+        crime_likes = 0
+        rm = CrimeModel(db.get_connection())
+        rm.insert(crime_name, crime_text, crime_likes,
                   session['username'])
-        return redirect("/recepies")
-    return render_template('add_recepie.html', title='Дневник питания',
+        return redirect("/crimes")
+    return render_template('add_crime.html', title='Дневник питания',
                            form=form, username=session['username'])
 
 

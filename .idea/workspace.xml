@@ -6,7 +6,6 @@
       <change afterPath="$PROJECT_DIR$/../TCproject/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Tattle-Crime/.idea/misc.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Tattle-Crime/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/Flask-1.1.2.dist-info/INSTALLER" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/Flask-1.1.2.dist-info/LICENSE.rst" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/Flask-1.1.2.dist-info/METADATA" afterDir="false" />
@@ -629,15 +628,17 @@
       <change afterPath="$PROJECT_DIR$/../untitled/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../untitled2/.idea/misc.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../untitled2/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$" beforeDir="false" afterPath="$PROJECT_DIR$" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginform/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/loginform/db.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loginform/fUCK.py" beforeDir="false" afterPath="$PROJECT_DIR$/loginform/fUCK.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loginform/news.db" beforeDir="false" afterPath="$PROJECT_DIR$/loginform/news.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginform/recepieform.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginform/templates/add_recepie.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/loginform/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/loginform/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loginform/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/loginform/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loginform/templates/info.html" beforeDir="false" afterPath="$PROJECT_DIR$/loginform/templates/info.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loginform/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/loginform/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loginform/templates/recepies.html" beforeDir="false" afterPath="$PROJECT_DIR$/loginform/templates/recepies.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loginform/templates/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/loginform/templates/registration.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginform/templates/recepies.html" beforeDir="false" />
     </list>
     <list id="c2ed8d85-496b-48e8-8e40-ca88efdeb667" name="Подправила баги: - Нормальный logout - При входе и регистрации учитывается пароль Произошёл мем на стартовой страничке, но я иду обедать, так что он подождёт :)" comment="Подправила баги: - Нормальный logout - При входе и регистрации учитывается пароль Произошёл мем на стартовой страничке, но я иду обедать, так что он подождёт :)" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -647,12 +648,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/loginform/fUCK.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="37" column="33" lean-forward="true" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
+            <state relative-caret-position="268">
+              <caret line="140" column="33" lean-forward="true" selection-start-line="140" selection-start-column="33" selection-end-line="140" selection-end-column="33" />
               <folding>
                 <element signature="e#24#83#0" expanded="true" />
               </folding>
@@ -660,11 +661,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/loginform/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="27" column="91" lean-forward="true" selection-start-line="27" selection-start-column="91" selection-end-line="27" selection-end-column="91" />
+            <state relative-caret-position="318">
+              <caret line="40" column="18" lean-forward="true" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -676,10 +677,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/loginform/templates/info.html">
+        <entry file="file://$PROJECT_DIR$/loginform/templates/add_news.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+            <state relative-caret-position="122">
+              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -687,8 +688,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/loginform/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+            <state relative-caret-position="85">
+              <caret line="5" column="6" lean-forward="true" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
               </folding>
@@ -697,35 +698,45 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/loginform/templates/login.html">
+        <entry file="file://$PROJECT_DIR$/loginform/templates/start.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/loginform/templates/crimes.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-100">
-              <caret line="8" column="41" lean-forward="true" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+            <state relative-caret-position="174">
+              <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/loginform/templates/add_crime.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/loginform/crimeform.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#24#55#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/loginform/templates/registration.html">
+        <entry file="file://$PROJECT_DIR$/loginform/db.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="41" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/loginform/templates/recepies.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#0;n#div#1;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="232">
+              <caret line="107" column="32" lean-forward="true" selection-start-line="107" selection-start-column="32" selection-end-line="107" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -737,6 +748,9 @@
       <find>ma</find>
       <find>mar</find>
       <find>margin-r</find>
+      <find>recepie</find>
+      <find>crimeform</find>
+      <find>crimes</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -746,21 +760,24 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/loginform/templates/tattle.css" />
-        <option value="$PROJECT_DIR$/loginform/db.py" />
         <option value="$PROJECT_DIR$/loginform/registrationform.py" />
-        <option value="$PROJECT_DIR$/loginform/fUCK.py" />
         <option value="$PROJECT_DIR$/loginform/templates/login.html" />
         <option value="$PROJECT_DIR$/loginform/templates/registration.html" />
-        <option value="$PROJECT_DIR$/loginform/templates/index.html" />
         <option value="$PROJECT_DIR$/loginform/templates/info.html" />
         <option value="$PROJECT_DIR$/loginform/templates/recepies.html" />
+        <option value="$PROJECT_DIR$/loginform/crimeform.py" />
+        <option value="$PROJECT_DIR$/loginform/templates/add_crime.html" />
+        <option value="$PROJECT_DIR$/loginform/db.py" />
+        <option value="$PROJECT_DIR$/loginform/templates/index.html" />
         <option value="$PROJECT_DIR$/loginform/templates/base.html" />
+        <option value="$PROJECT_DIR$/loginform/fUCK.py" />
+        <option value="$PROJECT_DIR$/loginform/templates/crimes.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="652" />
-    <option name="width" value="726" />
+    <option name="x" value="637" />
+    <option name="width" value="741" />
     <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -780,6 +797,12 @@
               <item name="TattleCrime" type="b2602c69:ProjectViewProjectNode" />
               <item name="TattleCrime" type="462c0819:PsiDirectoryNode" />
               <item name="loginform" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TattleCrime" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TattleCrime" type="462c0819:PsiDirectoryNode" />
+              <item name="loginform" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TattleCrime" type="b2602c69:ProjectViewProjectNode" />
@@ -910,7 +933,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587990235961</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Я умерла, но навела красоту и всё починила. А теперь у меня&#10;б&#10; О&#10;Л&#10;  я&#10; т&#10; &#10;г&#10; Л&#10;А&#10;   З&#10;  А">
+      <created>1587996370530</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1587996370530</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -926,12 +956,12 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1279762" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32405892" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31914893" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -989,6 +1019,20 @@
         </entry>
       </map>
     </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Обновила болванку из дневника питания" />
@@ -996,7 +1040,8 @@
     <MESSAGE value="Подправила баги: &#10;- Нормальный logout &#10;- При входе и регистрации учитывается пароль&#10;Произошёл мем на стартовой страничке, но я иду обедать, так что он подождёт :)" />
     <MESSAGE value="Подправила баги: - Нормальный logout - При входе и регистрации учитывается пароль Произошёл мем на стартовой страничке, но я иду обедать, так что он подождёт :)" />
     <MESSAGE value="Начала делать стартовую страницу (пока криво)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Начала делать стартовую страницу (пока криво)" />
+    <MESSAGE value="Я умерла, но навела красоту и всё починила. А теперь у меня&#10;б&#10; О&#10;Л&#10;  я&#10; т&#10; &#10;г&#10; Л&#10;А&#10;   З&#10;  А" />
+    <option name="LAST_COMMIT_MESSAGE" value="Я умерла, но навела красоту и всё починила. А теперь у меня&#10;б&#10; О&#10;Л&#10;  я&#10; т&#10; &#10;г&#10; Л&#10;А&#10;   З&#10;  А" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/loginform/templates/tattle.css">
@@ -1030,13 +1075,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/loginform/db.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="142" column="4" lean-forward="true" selection-start-line="142" selection-start-column="4" selection-end-line="142" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/loginform/templates/login.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1044,43 +1082,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/loginform/fUCK.py">
+    <entry file="file://$PROJECT_DIR$/loginform/templates/info.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="37" column="33" lean-forward="true" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
-          <folding>
-            <element signature="e#24#83#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/loginform/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="102">
+          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/loginform/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-100">
-          <caret line="8" column="41" lean-forward="true" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+        <state relative-caret-position="136">
+          <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/loginform/templates/recepies.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#div#1;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1092,23 +1106,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/loginform/templates/info.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/loginform/templates/recepies.html" />
     <entry file="file://$PROJECT_DIR$/loginform/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="27" column="91" lean-forward="true" selection-start-line="27" selection-start-column="91" selection-end-line="27" selection-end-column="91" />
+        <state relative-caret-position="318">
+          <caret line="40" column="18" lean-forward="true" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loginform/templates/add_news.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loginform/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="6" lean-forward="true" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loginform/fUCK.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="140" column="33" lean-forward="true" selection-start-line="140" selection-start-column="33" selection-end-line="140" selection-end-column="33" />
+          <folding>
+            <element signature="e#24#83#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loginform/crimeform.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#24#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loginform/templates/add_crime.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loginform/db.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="107" column="32" lean-forward="true" selection-start-line="107" selection-start-column="32" selection-end-line="107" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loginform/templates/start.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loginform/templates/crimes.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
         </state>
       </provider>
     </entry>

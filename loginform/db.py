@@ -70,41 +70,46 @@ class NewsModel:
         self.connection.commit()
 
 
-class RecepieModel:
+class CrimeModel:
     def __init__(self, connection):
         self.connection = connection
 
     def init_table(self):
         cursor = self.connection.cursor()
-        cursor.execute('''CREATE TABLE IF NOT EXISTS recepies 
-                            (recepie_name VARCHAR(100),
-                             recepie_text TEXT,
-                             recepie_kals REAL,
+        cursor.execute('''CREATE TABLE IF NOT EXISTS crimes 
+                            (crime_name VARCHAR(100),
+                             crime_text TEXT,
+                             crime_likes INTEGER,
                              username VARCHAR(100),
                              id	INTEGER PRIMARY KEY AUTOINCREMENT
                              )''')
         cursor.close()
         self.connection.commit()
 
-    def insert(self, recepie_name, recepie_text, recepie_kals, username):
+    def insert(self, crime_name, crime_text, crime_likes, username):
         cursor = self.connection.cursor()
-        cursor.execute('''INSERT INTO recepies 
-                          (recepie_name, recepie_text, recepie_kals, username) 
+        cursor.execute('''INSERT INTO crimes 
+                          (crime_name, crime_text, crime_likes, username) 
                           VALUES (?,?,?,?)''',
-                       (recepie_name, recepie_text, recepie_kals, username))
+                       (crime_name, crime_text, crime_likes, username))
         cursor.close()
         self.connection.commit()
 
     def get_all(self):
         cursor = self.connection.cursor()
-        cursor.execute("SELECT * FROM recepies")
+        cursor.execute("SELECT * FROM crimes")
         rows = cursor.fetchall()
-        print(rows)
         return rows
 
-    def delete(self, username):
+    def delete(self, crime_id):
         cursor = self.connection.cursor()
-        cursor.execute('''DELETE FROM news WHERE username = ?''', (session[username],))
+        cursor.execute('''DELETE FROM crimes WHERE id = ?''', (str(crime_id),))
+        cursor.close()
+        self.connection.commit()
+
+    def like(self, crime_id):
+        cursor = self.connection.cursor()
+        cursor.execute('''UPDATE crimes SET crime_likes = crime_likes + 1 WHERE id = ?''', (str(crime_id),))
         cursor.close()
         self.connection.commit()
 
