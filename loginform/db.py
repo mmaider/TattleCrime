@@ -89,6 +89,7 @@ class CrimeModel:
 
     def insert(self, crime_name, crime_text, pub_time, crime_likes, photo, username):
         cursor = self.connection.cursor()
+        print(crime_name, crime_text, pub_time, crime_likes, photo, username)
         cursor.execute('''INSERT INTO crimes 
                           (crime_name, crime_text, pub_time, crime_likes, photo, username) 
                           VALUES (?,?,?,?,?,?)''',

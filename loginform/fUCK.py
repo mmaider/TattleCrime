@@ -145,7 +145,7 @@ def add_crime():
     if form.validate_on_submit():
         crime_name = form.crime_name.data
         crime_text = form.crime_text.data
-        photo = form.photo
+        photo = form.photo.data
         crime_likes = 0
         rm = CrimeModel(db.get_connection())
         rm.insert(crime_name, crime_text, str(datetime.datetime.now().strftime("%d-%m-%Y %H:%M")), crime_likes, photo,

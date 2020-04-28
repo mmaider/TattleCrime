@@ -1,0 +1,37 @@
+﻿{% extends "base.html" %}
+ 
+{% block content %}
+    <div class="alert alert-light" role="alert" style="padding: 1%; margin:5%">
+    <p></p>
+    <h1>Добавьте запись</h1><br>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+            <h4>{{ form.crime_name.label }}</h4>
+            {{ form.crime_name }}<br>
+            {% for error in form.crime_name.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        <p>
+        <h4>{{ form.crime_text.label }}</h4>
+            {{ form.crime_text }}<br>
+            {% for error in form.crime_text.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        </p>
+        <p>
+        <h4>{{ form.photo.label }}</h4>
+            {{ form.photo }}<br>
+            {% for error in form.photo.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+    </div>
+{% endblock %}
