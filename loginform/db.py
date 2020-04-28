@@ -80,18 +80,19 @@ class CrimeModel:
                             (crime_name VARCHAR(100),
                              crime_text TEXT,
                              crime_likes INTEGER,
+                             photo VARCHAR(100),
                              username VARCHAR(100),
                              id	INTEGER PRIMARY KEY AUTOINCREMENT
                              )''')
         cursor.close()
         self.connection.commit()
 
-    def insert(self, crime_name, crime_text, crime_likes, username):
+    def insert(self, crime_name, crime_text, pub_time, crime_likes, photo, username):
         cursor = self.connection.cursor()
         cursor.execute('''INSERT INTO crimes 
-                          (crime_name, crime_text, crime_likes, username) 
-                          VALUES (?,?,?,?)''',
-                       (crime_name, crime_text, crime_likes, username))
+                          (crime_name, crime_text, pub_time, crime_likes, photo, username) 
+                          VALUES (?,?,?,?,?,?)''',
+                       (crime_name, crime_text, pub_time, crime_likes, photo, username))
         cursor.close()
         self.connection.commit()
 

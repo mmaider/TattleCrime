@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, redirect, session, render_template
 from flask_wtf import FlaskForm
+from PyQt5.QtWidgets import QFileDialog, QApplication
 from db import DB, UsersModel, NewsModel, CrimeModel
 from loginform import LoginForm
 from crimeform import AddCrimeForm
@@ -142,12 +143,12 @@ def add_crime():
         return redirect('/login')
     form = AddCrimeForm()
     if form.validate_on_submit():
-        date = str(datetime.datetime.now().strftime("%d-%m-%Y %H:%M"))
         crime_name = form.crime_name.data
         crime_text = form.crime_text.data
+        photo = form.photo
         crime_likes = 0
         rm = CrimeModel(db.get_connection())
-        rm.insert(crime_name, crime_text, crime_likes,
+        rm.insert(crime_name, crime_text, str(datetime.datetime.now().strftime("%d-%m-%Y %H:%M")), crime_likes, photo,
                   session['username'])
         return redirect("/crimes")
     return render_template('add_crime.html', title='Дневник питания',
