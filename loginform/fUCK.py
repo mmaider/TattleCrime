@@ -86,20 +86,13 @@ def add_news():
         return redirect('/login')
     form = AddNewsForm()
     if form.validate_on_submit():
-        date = str(datetime.datetime.now().strftime("%d-%m-%Y %H:%M"))
-        breakfast = form.breakfast.data
-        lunch = form.lunch.data
-        dinner = form.dinner.data
-        BKal = form.BKal.data
-        LKal = form.LKal.data
-        DKal = form.DKal.data
-        kallories = BKal + LKal + DKal
-        health = form.health.data
-        weight = form.weight.data
+        title = form.title.data
+        news_text = form.news_text.data
+        comments = form.comments.data
+        status = form.status.data
         nm = NewsModel(db.get_connection())
-        nm.insert(str(datetime.datetime.now().strftime("%d-%m-%Y %H:%M")), breakfast,
-                  session['user_id'], dinner, lunch,
-                  BKal, DKal, LKal, health, weight)
+        nm.insert(str(datetime.datetime.now().strftime("%d-%m-%Y %H:%M")), title, news_text, comments, status,
+                  session['user_id'])
         return redirect("/index")
     return render_template('add_news.html', title='Дневник питания',
                            form=form, username=session['username'])

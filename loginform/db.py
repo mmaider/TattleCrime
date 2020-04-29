@@ -24,26 +24,22 @@ class NewsModel:
         cursor = self.connection.cursor()
         cursor.execute('''CREATE TABLE IF NOT EXISTS news 
                             (id INTEGER PRIMARY KEY AUTOINCREMENT, 
-                             title VARCHAR(100),
-                             breakfast VARCHAR(1000),
-                             user_id INTEGER,
-                             dinner VARCHAR(1000),
-                             lunch VARCHAR(1000),
-                             BKal INTEGER,
-                             DKal INTEGER,
-                             LKal INTEGER,
-                             health VARCHAR(1000),
-                             weight INTEGER
+                             pub_time DATETIME,
+                             title TEXT(500),
+                             news_text TEXT(2000),
+                             comments TEXT(1000),
+                             status VARCHAR(1000),
+                             user_id INTEGER
                              )''')
         cursor.close()
         self.connection.commit()
 
-    def insert(self, title, breakfast, user_id, dinner, lunch, BKal, DKal, LKal, health, weight):
+    def insert(self, pub_time, title, news_text, comments, status, user_id):
         cursor = self.connection.cursor()
         cursor.execute('''INSERT INTO news 
-                          (title, breakfast, user_id, dinner, lunch, BKal, DKal, LKal, health, weight) 
-                          VALUES (?,?,?,?,?,?,?,?,?,?)''',
-                       (title, breakfast, str(user_id), dinner, lunch, BKal, DKal, LKal, health, weight))
+                          (pub_time, title, news_text, comments, status, user_id) 
+                          VALUES (?,?,?,?,?,?)''',
+                       (pub_time, title, news_text, comments, status, str(user_id)))
         cursor.close()
         self.connection.commit()
 
@@ -79,6 +75,7 @@ class CrimeModel:
         cursor.execute('''CREATE TABLE IF NOT EXISTS crimes 
                             (crime_name VARCHAR(100),
                              crime_text TEXT,
+                             pub_time DATETIME,
                              crime_likes INTEGER,
                              photo VARCHAR(100),
                              username VARCHAR(100),

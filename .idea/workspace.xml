@@ -12,11 +12,11 @@
       <change afterPath="$PROJECT_DIR$/../untitled2/.idea/misc.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../untitled2/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginform/addnewsform.py" beforeDir="false" afterPath="$PROJECT_DIR$/loginform/addnewsform.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loginform/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/loginform/db.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loginform/fUCK.py" beforeDir="false" afterPath="$PROJECT_DIR$/loginform/fUCK.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loginform/news.db" beforeDir="false" afterPath="$PROJECT_DIR$/loginform/news.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loginform/templates/archive.html" beforeDir="false" afterPath="$PROJECT_DIR$/loginform/templates/archive.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loginform/templates/crimes.html" beforeDir="false" afterPath="$PROJECT_DIR$/loginform/templates/crimes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginform/templates/add_news.html" beforeDir="false" afterPath="$PROJECT_DIR$/loginform/templates/add_news.html" afterDir="false" />
     </list>
     <list id="c2ed8d85-496b-48e8-8e40-ca88efdeb667" name="Подправила баги: - Нормальный logout - При входе и регистрации учитывается пароль Произошёл мем на стартовой страничке, но я иду обедать, так что он подождёт :)" comment="Подправила баги: - Нормальный logout - При входе и регистрации учитывается пароль Произошёл мем на стартовой страничке, но я иду обедать, так что он подождёт :)" />
     <list id="f652af1d-968d-460a-b438-05b3c091ed50" name="Работа с базой данных + всё, что касается новостей (таблица и страницы crimes_...), доведено до ума" comment="">
@@ -31,22 +31,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/loginform/fUCK.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="122" lean-forward="true" selection-start-line="122" selection-end-line="122" />
-              <folding>
-                <element signature="e#24#83#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/loginform/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="36" column="18" lean-forward="true" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
+            <state relative-caret-position="334">
+              <caret line="36" column="18" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -58,10 +46,58 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/loginform/db.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="125">
+              <caret line="31" column="34" lean-forward="true" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/loginform/fUCK.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="172">
+              <caret line="93" column="72" selection-start-line="93" selection-start-column="72" selection-end-line="93" selection-end-column="72" />
+              <folding>
+                <element signature="e#24#83#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/loginform/addnewsform.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="174">
+              <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+              <folding>
+                <element signature="e#24#83#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/loginform/templates/add_news.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+            <state relative-caret-position="255">
+              <caret line="15" column="50" lean-forward="true" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/loginform/templates/add_crime.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="14" lean-forward="true" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -79,19 +115,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/loginform/templates/add_crime.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="76" selection-start-line="10" selection-start-column="76" selection-end-line="10" selection-end-column="76" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/loginform/templates/crimes.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
-              <caret line="11" column="64" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="64" />
+              <caret line="11" column="64" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="64" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
               </folding>
@@ -99,23 +126,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/loginform/templates/archive.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="18" column="7" lean-forward="true" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+            <state relative-caret-position="425">
+              <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/loginform/db.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="102" column="32" lean-forward="true" selection-start-line="102" selection-start-column="32" selection-end-line="102" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -153,13 +171,14 @@
         <option value="$PROJECT_DIR$/loginform/templates/recepies.html" />
         <option value="$PROJECT_DIR$/loginform/templates/index.html" />
         <option value="$PROJECT_DIR$/loginform/crimeform.py" />
-        <option value="$PROJECT_DIR$/loginform/templates/add_news.html" />
-        <option value="$PROJECT_DIR$/loginform/templates/add_crime.html" />
         <option value="$PROJECT_DIR$/loginform/templates/base.html" />
         <option value="$PROJECT_DIR$/loginform/templates/crimes.html" />
-        <option value="$PROJECT_DIR$/loginform/db.py" />
-        <option value="$PROJECT_DIR$/loginform/fUCK.py" />
         <option value="$PROJECT_DIR$/loginform/templates/archive.html" />
+        <option value="$PROJECT_DIR$/loginform/templates/add_crime.html" />
+        <option value="$PROJECT_DIR$/loginform/fUCK.py" />
+        <option value="$PROJECT_DIR$/loginform/templates/add_news.html" />
+        <option value="$PROJECT_DIR$/loginform/addnewsform.py" />
+        <option value="$PROJECT_DIR$/loginform/db.py" />
       </list>
     </option>
   </component>
@@ -176,7 +195,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -205,6 +223,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -367,7 +386,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588107514799</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Ещё немного красоты + последние 10 записей (сортируются по дате) в crimes">
+      <created>1588149030124</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1588149030124</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -401,25 +427,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31914893" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3289689" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3289689" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.3289689" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout-to-restore>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -473,7 +480,8 @@
     <MESSAGE value="Заработало. Я идиот" />
     <MESSAGE value="23:50 я разделила crimes на две страницы&#10;Теперь архив и последние новости - это две разные красивые штуки&#10;Плюс, теперь доступны картинки&#10;В планах на завтра сделать страницу и форму заметок, если останется время - добавить сортировку на странице архива&#10;Вообще это странно, что я тут разговариваю сама с собой?&#10;Спокойной ночи&#10;Заткнись)" />
     <MESSAGE value="Вообще всё" />
-    <option name="LAST_COMMIT_MESSAGE" value="Вообще всё" />
+    <MESSAGE value="Ещё немного красоты + последние 10 записей (сортируются по дате) в crimes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ещё немного красоты + последние 10 записей (сортируются по дате) в crimes" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/loginform/templates/tattle.css">
@@ -563,26 +571,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/loginform/db.py">
+    <entry file="file://$PROJECT_DIR$/loginform/templates/crimes.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="102" column="32" lean-forward="true" selection-start-line="102" selection-start-column="32" selection-end-line="102" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/loginform/templates/add_news.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/loginform/fUCK.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="122" lean-forward="true" selection-start-line="122" selection-end-line="122" />
+        <state relative-caret-position="187">
+          <caret line="11" column="64" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="64" />
           <folding>
-            <element signature="e#24#83#0" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loginform/templates/archive.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -599,8 +603,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/loginform/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="36" column="18" lean-forward="true" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
+        <state relative-caret-position="334">
+          <caret line="36" column="18" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -612,27 +616,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/loginform/templates/add_crime.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="76" selection-start-line="10" selection-start-column="76" selection-end-line="10" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/loginform/templates/crimes.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="64" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="64" />
+        <state relative-caret-position="102">
+          <caret line="6" column="14" lean-forward="true" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
           <folding>
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/loginform/templates/archive.html">
+    <entry file="file://$PROJECT_DIR$/loginform/templates/add_news.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="18" column="7" lean-forward="true" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+        <state relative-caret-position="255">
+          <caret line="15" column="50" lean-forward="true" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
           <folding>
-            <element signature="n#style#0;n#img#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loginform/db.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="31" column="34" lean-forward="true" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loginform/fUCK.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="93" column="72" selection-start-line="93" selection-start-column="72" selection-end-line="93" selection-end-column="72" />
+          <folding>
+            <element signature="e#24#83#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loginform/addnewsform.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+          <folding>
+            <element signature="e#24#83#0" expanded="true" />
           </folding>
         </state>
       </provider>
