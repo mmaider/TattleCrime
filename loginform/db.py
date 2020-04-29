@@ -103,6 +103,12 @@ class CrimeModel:
         rows = cursor.fetchall()
         return rows
 
+    def get_lasts(self):
+        cursor = self.connection.cursor()
+        cursor.execute("SELECT * FROM crimes ORDER BY pub_time DESC LIMIT 10")
+        rows = cursor.fetchall()
+        return rows
+
     def delete(self, crime_id):
         cursor = self.connection.cursor()
         cursor.execute('''DELETE FROM crimes WHERE id = ?''', (str(crime_id),))

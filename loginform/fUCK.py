@@ -125,7 +125,7 @@ def info():
 def crimes():
     if 'username' not in session:
         return redirect('/login')
-    crimes = CrimeModel(db.get_connection()).get_all()
+    crimes = CrimeModel(db.get_connection()).get_lasts()
     return render_template('crimes.html', username=session['username'],
                            crimes=crimes)
 
