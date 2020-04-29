@@ -6,35 +6,31 @@
 </div>
 {% for item in news %}
     <div class="alert alert-light" role="alert" style="padding:1%; margin-top:3%;">
-	<h2>{{item[1]}}</h2>
-	<table class="table table-bordered">
-  	<thead>
-    		<tr class="table-active">
-      		<th scope="col"></th>
-      		<th scope="col">Завтрак</th>
-      		<th scope="col">Обед</th>
-      		<th scope="col">Ужин</th>
-   	 </tr>
-  	 </thead>
-  	 <tbody>
-    	 <tr class="table-light">
-      	 <th scope="row">Рацион</th>
-      		<td>{{item[2]}}</td>
-      		<td>{{item[5]}}</td>
-      		<td>{{item[4]}}</td>
-    	 </tr>
-    	 <tr class="table-active">
-      	 <th scope="row">Калории</th>
-      		<td>{{item[6]}} кал.</td>
-      		<td>{{item[8]}} кал.</td>
-      		<td>{{item[7]}} кал.</td>
-    	 </tr>
-  	 </tbody>
-	 </table>
-
-	 <h4>Самочувствие: {{item[9]}}</h4>
-	 <h4>Вес на данный момент: {{item[10]}}</h4>
-         <a href="/delete_news/{{item[0]}}">Удалить запись</a>
-    </div>
+	<h2>{{item[2]}}</h2>
+	<h3>{{item[1]}}</h3>
+	<table class="table table-bordered" style="width: 100%">
+		<thead>
+			<tr class="table-active">
+				<th scope="col" style="text-align: center;">Текст</th>
+				<th scope="col" style="text-align: center;">Комментарии</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<p style="text-indent: 20px;">{{ item[3] }}</p>
+				</td>
+				<td>
+					<p style="color: red;">{{ item[4] }}</p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<p>
+		Статус: <a style="color: red">{{ item[5] }}</a>
+	</p>
+	<a href="/delete_news/{{item[0]}}">Удалить запись</a><br>
+	<a href="/update_news/{{item[0]}}">Редактировать запись</a>
+	</div>
 {% endfor %}
 {% endblock %}

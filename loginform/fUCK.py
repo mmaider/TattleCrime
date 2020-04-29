@@ -6,6 +6,7 @@ from db import DB, UsersModel, NewsModel, CrimeModel
 from loginform import LoginForm
 from crimeform import AddCrimeForm
 from addnewsform import AddNewsForm
+from updatenewsform import UpdateNewsForm
 from registrationform import RegistrationForm
 import random
 import datetime
@@ -105,6 +106,30 @@ def delete_news(news_id):
     nm = NewsModel(db.get_connection())
     nm.delete(news_id)
     return redirect("/index")
+
+
+@app.route('/update_news/<int:news_id>', methods=['GET', 'POST'])
+def update_news(news_id):
+    if 'username' not in session:
+        return redirect('/login')
+    nm = NewsModel(db.get_connection())
+    pars = '\n'.join(nm.get(news_id)[2:-1])
+    handle = open("godblessfaywray.txt", "w")
+    handle.write(pars)
+    handle.close()
+    handle = open("godblessfaywray.txt", "r")
+    if handle != '':
+        form = UpdateNewsForm()
+        if form.validate_on_submit():
+            title = form.title.data
+            news_text = form.news_text.data
+            comments = form.comments.data
+            status = form.status.data
+            nm.update(news_id, str(datetime.datetime.now().strftime("%d-%m-%Y %H:%M")), title, news_text, comments, status,
+                      session['user_id'])
+            return redirect("/index")
+        return render_template('add_news.html', title='TattleCrime',
+                               form=form, username=session['username'])
 
 
 @app.route('/info', methods=['GET', 'POST'])

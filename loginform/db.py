@@ -43,6 +43,15 @@ class NewsModel:
         cursor.close()
         self.connection.commit()
 
+    def update(self, news_id, pub_time, title, news_text, comments, status, user_id):
+        cursor = self.connection.cursor()
+        cursor.execute('''UPDATE news 
+                        SET pub_time = ?, title = ?, news_text = ?, comments = ?, 
+                        status = ?, user_id = ? WHERE id = ?''',
+                       (pub_time, title, news_text, comments, status, str(user_id), str(news_id)))
+        cursor.close()
+        self.connection.commit()
+
     def get(self, news_id):
         cursor = self.connection.cursor()
         cursor.execute("SELECT * FROM news WHERE id = ?", (str(news_id)))
