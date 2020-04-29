@@ -125,7 +125,8 @@ def update_news(news_id):
             news_text = form.news_text.data
             comments = form.comments.data
             status = form.status.data
-            nm.update(news_id, str(datetime.datetime.now().strftime("%d-%m-%Y %H:%M")), title, news_text, comments, status,
+            nm.update(news_id, str(datetime.datetime.now().strftime("%d-%m-%Y %H:%M")), title, news_text, comments,
+                      status,
                       session['user_id'])
             return redirect("/index")
         return render_template('add_news.html', title='TattleCrime',
@@ -145,6 +146,42 @@ def crimes():
         return redirect('/login')
     crimes = CrimeModel(db.get_connection()).get_lasts()
     return render_template('crimes.html', username=session['username'],
+                           crimes=crimes)
+
+
+@app.route('/sort_newest', methods=['GET', 'POST'])
+def sort_newest():
+    if 'username' not in session:
+        return redirect('/login')
+    crimes = CrimeModel(db.get_connection()).sort_newest()
+    return render_template('archive.html', username=session['username'],
+                           crimes=crimes)
+
+
+@app.route('/sort_oldest', methods=['GET', 'POST'])
+def sort_oldest():
+    if 'username' not in session:
+        return redirect('/login')
+    crimes = CrimeModel(db.get_connection()).sort_oldest()
+    return render_template('archive.html', username=session['username'],
+                           crimes=crimes)
+
+
+@app.route('/sort_likes', methods=['GET', 'POST'])
+def sort_likes():
+    if 'username' not in session:
+        return redirect('/login')
+    crimes = CrimeModel(db.get_connection()).sort_likes()
+    return render_template('archive.html', username=session['username'],
+                           crimes=crimes)
+
+
+@app.route('/sort_likes_desc', methods=['GET', 'POST'])
+def sort_likes_desc():
+    if 'username' not in session:
+        return redirect('/login')
+    crimes = CrimeModel(db.get_connection()).sort_likes_desc()
+    return render_template('archive.html', username=session['username'],
                            crimes=crimes)
 
 

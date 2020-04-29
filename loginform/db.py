@@ -127,6 +127,30 @@ class CrimeModel:
         cursor.close()
         self.connection.commit()
 
+    def sort_newest(self):
+        cursor = self.connection.cursor()
+        cursor.execute("SELECT * FROM crimes ORDER BY pub_time")
+        rows = cursor.fetchall()
+        return rows
+
+    def sort_oldest(self):
+        cursor = self.connection.cursor()
+        cursor.execute("SELECT * FROM crimes ORDER BY pub_time DESC")
+        rows = cursor.fetchall()
+        return rows
+
+    def sort_likes(self):
+        cursor = self.connection.cursor()
+        cursor.execute("SELECT * FROM crimes ORDER BY crime_likes")
+        rows = cursor.fetchall()
+        return rows
+
+    def sort_likes_desc(self):
+        cursor = self.connection.cursor()
+        cursor.execute("SELECT * FROM crimes ORDER BY crime_likes DESC")
+        rows = cursor.fetchall()
+        return rows
+
 
 class UsersModel:
     def __init__(self, connection):
@@ -166,6 +190,6 @@ class UsersModel:
     def exists(self, user_name, password):
         cursor = self.connection.cursor()
         cursor.execute("SELECT * FROM users WHERE user_name = ? AND password_hash = ?",
-                       (user_name, password, ))
+                       (user_name, password,))
         row = cursor.fetchone()
         return (True, row[0], row[2]) if row else (False,)
