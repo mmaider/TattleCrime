@@ -5,4 +5,4 @@ from wtforms.validators import DataRequired
 
 class SearchForm(FlaskForm):
     searchtext = TextAreaField('Поиск', validators=[DataRequired()])
-    submit = SubmitField('&#128269;')
+    submit = SubmitField('Поиск')

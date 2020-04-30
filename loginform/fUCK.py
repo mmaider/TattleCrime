@@ -8,6 +8,7 @@ from crimeform import AddCrimeForm
 from addnewsform import AddNewsForm
 from updatenewsform import UpdateNewsForm, Settings
 from registrationform import RegistrationForm
+from searchform import SearchForm
 import random
 import datetime
 
@@ -155,7 +156,11 @@ def sort_newest():
     if 'username' not in session:
         return redirect('/login')
     crimes = CrimeModel(db.get_connection()).sort_newest()
-    return render_template('archive.html', username=session['username'],
+    form = SearchForm()
+    if form.validate_on_submit():
+        searchtext = form.searchtext.data
+        crimes = CrimeModel(db.get_connection()).findcrime(searchtext)
+    return render_template('archive.html', username=session['username'], form=form,
                            crimes=crimes)
 
 
@@ -164,7 +169,11 @@ def sort_oldest():
     if 'username' not in session:
         return redirect('/login')
     crimes = CrimeModel(db.get_connection()).sort_oldest()
-    return render_template('archive.html', username=session['username'],
+    form = SearchForm()
+    if form.validate_on_submit():
+        searchtext = form.searchtext.data
+        crimes = CrimeModel(db.get_connection()).findcrime(searchtext)
+    return render_template('archive.html', username=session['username'], form=form,
                            crimes=crimes)
 
 
@@ -173,7 +182,11 @@ def sort_likes():
     if 'username' not in session:
         return redirect('/login')
     crimes = CrimeModel(db.get_connection()).sort_likes()
-    return render_template('archive.html', username=session['username'],
+    form = SearchForm()
+    if form.validate_on_submit():
+        searchtext = form.searchtext.data
+        crimes = CrimeModel(db.get_connection()).findcrime(searchtext)
+    return render_template('archive.html', username=session['username'], form=form,
                            crimes=crimes)
 
 
@@ -182,7 +195,11 @@ def sort_likes_desc():
     if 'username' not in session:
         return redirect('/login')
     crimes = CrimeModel(db.get_connection()).sort_likes_desc()
-    return render_template('archive.html', username=session['username'],
+    form = SearchForm()
+    if form.validate_on_submit():
+        searchtext = form.searchtext.data
+        crimes = CrimeModel(db.get_connection()).findcrime(searchtext)
+    return render_template('archive.html', username=session['username'], form=form,
                            crimes=crimes)
 
 
@@ -191,7 +208,11 @@ def archive():
     if 'username' not in session:
         return redirect('/login')
     crimes = CrimeModel(db.get_connection()).get_all()
-    return render_template('archive.html', username=session['username'],
+    form = SearchForm()
+    if form.validate_on_submit():
+        searchtext = form.searchtext.data
+        crimes = CrimeModel(db.get_connection()).findcrime(searchtext)
+    return render_template('archive.html', username=session['username'], form=form,
                            crimes=crimes)
 
 

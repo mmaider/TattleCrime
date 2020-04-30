@@ -54,7 +54,7 @@ class NewsModel:
 
     def get(self, news_id):
         cursor = self.connection.cursor()
-        cursor.execute("SELECT * FROM news WHERE id = ?", (str(news_id)))
+        cursor.execute("SELECT * FROM news WHERE id = ?", [str(news_id)])
         row = cursor.fetchone()
         return row
 
@@ -70,7 +70,7 @@ class NewsModel:
 
     def delete(self, news_id):
         cursor = self.connection.cursor()
-        cursor.execute('''DELETE FROM news WHERE id = ?''', (str(news_id), ))
+        cursor.execute('''DELETE FROM news WHERE id = ?''', [str(news_id)])
         cursor.close()
         self.connection.commit()
 
@@ -126,6 +126,12 @@ class CrimeModel:
         cursor.execute('''UPDATE crimes SET crime_likes = crime_likes + 1 WHERE id = ?''', (str(crime_id),))
         cursor.close()
         self.connection.commit()
+
+    def findcrime(self, searchtext):
+        cursor = self.connection.cursor()
+        cursor.execute("SELECT * FROM crimes WHERE crime_name LIKE '%"+searchtext+"%'")
+        rows = cursor.fetchall()
+        return rows
 
     def sort_newest(self):
         cursor = self.connection.cursor()
