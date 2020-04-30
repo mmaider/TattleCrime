@@ -6,7 +6,7 @@ from db import DB, UsersModel, NewsModel, CrimeModel
 from loginform import LoginForm
 from crimeform import AddCrimeForm
 from addnewsform import AddNewsForm
-from updatenewsform import UpdateNewsForm
+from updatenewsform import UpdateNewsForm, Settings
 from registrationform import RegistrationForm
 import random
 import datetime
@@ -113,24 +113,25 @@ def update_news(news_id):
     if 'username' not in session:
         return redirect('/login')
     nm = NewsModel(db.get_connection())
-    pars = '\n'.join(nm.get(news_id)[2:-1])
-    handle = open("godblessfaywray.txt", "w")
-    handle.write(pars)
-    handle.close()
-    handle = open("godblessfaywray.txt", "r")
-    if handle != '':
-        form = UpdateNewsForm()
-        if form.validate_on_submit():
-            title = form.title.data
-            news_text = form.news_text.data
-            comments = form.comments.data
-            status = form.status.data
-            nm.update(news_id, str(datetime.datetime.now().strftime("%d-%m-%Y %H:%M")), title, news_text, comments,
-                      status,
-                      session['user_id'])
-            return redirect("/index")
-        return render_template('add_news.html', title='TattleCrime',
-                               form=form, username=session['username'])
+    pars = nm.get(news_id)[2:-1]
+    saved_settings = Settings()
+    saved_settings.title = pars[0]
+    saved_settings.news_text = pars[1]
+    saved_settings.comments = pars[2]
+    saved_settings.status = pars[3]
+    form = UpdateNewsForm(obj=saved_settings)
+    if form.validate_on_submit():
+        form.populate_obj(saved_settings)
+        title = form.title.data
+        news_text = form.news_text.data
+        comments = form.comments.data
+        status = form.status.data
+        nm.update(news_id, str(datetime.datetime.now().strftime("%d-%m-%Y %H:%M")), title, news_text, comments,
+                  status,
+                  session['user_id'])
+        return redirect("/index")
+    return render_template('add_news.html', title='TattleCrime',
+                           form=form, username=session['username'])
 
 
 @app.route('/info', methods=['GET', 'POST'])

@@ -61,7 +61,7 @@ class NewsModel:
     def get_all(self, user_id=None):
         cursor = self.connection.cursor()
         if user_id:
-            cursor.execute("SELECT * FROM news WHERE user_id = ?",
+            cursor.execute("SELECT * FROM news WHERE user_id = ? ORDER BY pub_time DESC",
                            (str(user_id),))
         else:
             cursor.execute("SELECT * FROM news")
@@ -70,7 +70,7 @@ class NewsModel:
 
     def delete(self, news_id):
         cursor = self.connection.cursor()
-        cursor.execute('''DELETE FROM news WHERE id = ?''', (str(news_id),))
+        cursor.execute('''DELETE FROM news WHERE id = ?''', (str(news_id), ))
         cursor.close()
         self.connection.commit()
 
