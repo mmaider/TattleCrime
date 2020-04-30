@@ -117,13 +117,13 @@ class CrimeModel:
 
     def delete(self, crime_id):
         cursor = self.connection.cursor()
-        cursor.execute('''DELETE FROM crimes WHERE id = ?''', (str(crime_id),))
+        cursor.execute('''DELETE FROM crimes WHERE id = ?''', [str(crime_id)])
         cursor.close()
         self.connection.commit()
 
     def like(self, crime_id):
         cursor = self.connection.cursor()
-        cursor.execute('''UPDATE crimes SET crime_likes = crime_likes + 1 WHERE id = ?''', (str(crime_id),))
+        cursor.execute('''UPDATE crimes SET crime_likes = crime_likes + 1 WHERE id = ?''', [str(crime_id)])
         cursor.close()
         self.connection.commit()
 
@@ -183,7 +183,7 @@ class UsersModel:
 
     def get(self, user_id):
         cursor = self.connection.cursor()
-        cursor.execute("SELECT * FROM users WHERE id = ?", (str(user_id)))
+        cursor.execute("SELECT * FROM users WHERE id = ?", [str(user_id)])
         row = cursor.fetchone()
         return row
 
